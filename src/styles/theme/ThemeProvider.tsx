@@ -5,14 +5,14 @@ import theme from './theme';
 import { ReactNode } from 'react';
 
 interface IProps {
-    children: ReactNode;
+	children: ReactNode;
 }
 
 const ThemeProvider: React.FC<IProps> = ({ children }: IProps) => (
-    <StyledComponentsProvider theme={theme}>
-        <GlobalStyle />
-        {children}
-    </StyledComponentsProvider>
+	<StyledComponentsProvider theme={theme}>
+		<GlobalStyle />
+		{children}
+	</StyledComponentsProvider>
 );
 
 export default ThemeProvider;
