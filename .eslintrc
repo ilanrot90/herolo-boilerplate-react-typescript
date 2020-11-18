@@ -26,6 +26,7 @@
   "ignorePatterns": ["*.test.*", "src/__mocks__/*"],
   "rules": {
     "no-console": 1,
-    "no-mixed-spaces-and-tabs": 0
+    "no-mixed-spaces-and-tabs": 0,
+    "@typescript-eslint/no-empty-interface": 0
   }
 }
