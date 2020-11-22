@@ -1,14 +1,14 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
+import path from 'path';
+import type { Config } from '@jest/types';
 
-module.exports = {
+const config: Config.InitialOptions = {
 	displayName: {
 		name: 'template',
 		color: 'blue',
 	},
 	preset: 'ts-jest',
 	collectCoverageFrom: ['**/src/**/*.{js,ts,tsx}', '!**/testingUtils/**'],
-	coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/src/testingUtils/**'],
+	coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/testingUtils/**'],
 	verbose: true,
 	notify: true,
 	notifyMode: 'failure',
@@ -17,3 +17,5 @@ module.exports = {
 	setupFilesAfterEnv: [path.resolve(__dirname, 'src', 'setupTests.ts')],
 	snapshotSerializers: ['jest-styled-components/serializer'],
 };
+
+export default config;
