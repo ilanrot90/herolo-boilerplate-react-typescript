@@ -3,12 +3,12 @@ import * as types from 'store/types/storeA.types';
 import * as actions from 'store/actions/storeA.actions';
 import type { AllEffect, ForkEffect } from '@redux-saga/core/effects';
 
-const callApi = (msg: string) => new Promise(resolve => setTimeout(() => resolve(msg), 1000));
+const callApi = (msg: string): Promise<string> | string => new Promise(resolve => setTimeout(() => resolve(msg), 1000));
 
 function* handleFetch() {
 	try {
 		// To call async functions, use redux-saga's `call()`.
-		const message = yield call(callApi, 'some message');
+		const message = (yield call(callApi, 'some message')) as string;
 		// on success/error dispatch an action to update state
 		yield put(actions.setMessage({ message, timestamp: 263267362 }));
 	} catch (err) {

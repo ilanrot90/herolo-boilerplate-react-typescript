@@ -34,9 +34,9 @@ type RotateIcon = InterpolationFunction<{
 }>;
 
 export const rotateIcon: RotateIcon = ({ isOpen, openDegree = 180, closedDegree = 0 }) => css`
-  transform: rotate(${isOpen ? openDegree : closedDegree}deg);
-  transition: transform 0.2s;
-  transform-origin: center;
+	transform: rotate(${isOpen ? openDegree : closedDegree}deg);
+	transition: transform 0.2s;
+	transform-origin: center;
 `;
 
 export const scrollBarWidth = '6px';
